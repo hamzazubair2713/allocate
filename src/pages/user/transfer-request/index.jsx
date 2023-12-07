@@ -7,7 +7,7 @@ import back from "../../../../public/back.png";
 import SideNavUser from "@/components/SideNavUser";
 import Status from "@/components/StatusComponent/Status";
 
-const index = () => {
+const Index = () => {
   const [addReq, setAddReq] = useState(true);
 
   function handelClick(value) {
@@ -26,4 +26,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

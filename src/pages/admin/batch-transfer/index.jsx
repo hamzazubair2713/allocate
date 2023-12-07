@@ -6,7 +6,7 @@ import back from "../../../../public/back.png";
 import BatchTransferAdmin from "@/components/BatchTransferAdmin/BatchTransferAdmin";
 import BatchTransferRequest from "@/components/BatchTransferAdmin/BatchTransferRequest/BatchTransferRequest";
 
-const index = () => {
+const Index = () => {
   const [step, setStep] = useState(true);
   return (
     <>
@@ -24,4 +24,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

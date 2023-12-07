@@ -7,7 +7,7 @@ import ProcessingTransfer from "@/components/ProcessingTransfer";
 import TransferPayoutCompleted from "@/components/TransferPayoutCompleted";
 import { useRouter } from "next/router";
 
-const index = ({ param }) => {
+const Index = ({ param }) => {
   // const router = useRouter();
   // console.log(router.query);
   const [handelForm, setHandelForm] = useState(1);
@@ -32,4 +32,4 @@ const index = ({ param }) => {
   );
 };
 
-export default index;
+export default Index;
