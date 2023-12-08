@@ -49,10 +49,8 @@ function SideNavUser() {
           >
             <Link href="/user/nft-redemption">NFT Collections</Link>
           </li>
-          <li className={activeLink === "Emissary Settings" ? "active" : ""}>
-            <Link href="/" onClick={() => handleLinkClick("Emissary Settings")}>
-              Emissary Settings
-            </Link>
+          <li className={activeLink === "/emissary-settings" ? "active" : ""}>
+            <Link href="/emissary-settings">Emissary Settings</Link>
           </li>
         </ul>
       </Nav>

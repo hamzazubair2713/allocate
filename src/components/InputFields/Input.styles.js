@@ -39,7 +39,6 @@ export const ProgramDrop = styled.div`
   flex-direction: column;
   gap: 14px; */
   position: relative;
-  z-index: 3;
 
   label {
     display: block;
@@ -99,11 +98,12 @@ export const DropDownAssetsItem = styled.div`
   padding: 19px 0;
   overflow: hidden;
   display: ${({ display }) => display};
-  right: 0;
-  left: 0;
+  right: -2px;
+  left: -2px;
   background: var(--gray-250);
   top: 49px;
   transition: 0.3s all ease;
+  z-index: 10;
   li {
     background: var(--gray-250);
     width: 100%;
@@ -125,6 +125,7 @@ export const PaymentDropDownItem = styled.div`
   background: var(--white);
   top: 49px;
   transition: 0.3s all ease;
+  z-index: 4;
 
   li {
     background: var(--white);

@@ -5,8 +5,14 @@ import {
   DropDownListWrapper,
   ProgramDrop,
 } from "./Input.styles";
+import klayLogo from "../../../public/klayLogo.png";
+import Planets from "../../../public/Planets.png";
+import USDC from "../../../public/USDC.png";
+import USDT from "../../../public/USDT.png";
+import XET from "../../../public/XET.png";
+import Image from "next/image";
 
-const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
+const RoleDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
   const [openDropDown, setOpenDropDown] = useState(false);
   // const [selectedValue, setSelectedValue] = useState(
   //   "  Select name of the program"
@@ -14,19 +20,23 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
   const ProgramArray = [
     {
       id: 1,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b258",
+      role: "All Access",
     },
     {
       id: 2,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b453654",
+      role: "Approval",
     },
     {
       id: 3,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b452564",
+      role: "Payout",
     },
     {
       id: 4,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b452326",
+      role: "Safes",
+    },
+    {
+      id: 5,
+      role: "Admin",
     },
   ];
   function handelChange(e, selectedValue) {
@@ -40,12 +50,9 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
 
   return (
     <ProgramDrop>
+      {/* <label htmlFor="">Program</label> */}
       <DropDownListWrapper onClick={() => setOpenDropDown(!openDropDown)}>
-        {selectedValue?.signature ? (
-          <>{selectedValue.signature}</>
-        ) : (
-          "Select Approval Signature"
-        )}{" "}
+        {selectedValue?.role ? <>{selectedValue.role}</> : "Select an access"}{" "}
         <span
           className="dropDownIcon"
           onClick={() => setOpenDropDown(!openDropDown)}
@@ -63,7 +70,7 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
         <DropDownAssetsItem display={openDropDown ? "block" : "none"}>
           {ProgramArray.map((elem, ind) => (
             <li key={ind} onClick={(e) => handelChange(e, elem)}>
-              {elem.signature}{" "}
+              {elem.role}{" "}
             </li>
           ))}
         </DropDownAssetsItem>
@@ -72,4 +79,4 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
   );
 };
 
-export default ApprovalDropDown;
+export default RoleDropDown;

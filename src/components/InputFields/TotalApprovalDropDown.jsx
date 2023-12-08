@@ -6,7 +6,12 @@ import {
   ProgramDrop,
 } from "./Input.styles";
 
-const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
+const TotalApprovalDropDown = ({
+  onChange,
+  selectedValue,
+  setSelectedValue,
+  className,
+}) => {
   const [openDropDown, setOpenDropDown] = useState(false);
   // const [selectedValue, setSelectedValue] = useState(
   //   "  Select name of the program"
@@ -14,19 +19,19 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
   const ProgramArray = [
     {
       id: 1,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b258",
+      approval: 1,
     },
     {
       id: 2,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b453654",
+      approval: 2,
     },
     {
       id: 3,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b452564",
+      approval: 3,
     },
     {
       id: 4,
-      signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b452326",
+      approval: 4,
     },
   ];
   function handelChange(e, selectedValue) {
@@ -39,13 +44,9 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
   }, [onChange, selectedValue]);
 
   return (
-    <ProgramDrop>
+    <ProgramDrop className={className}>
       <DropDownListWrapper onClick={() => setOpenDropDown(!openDropDown)}>
-        {selectedValue?.signature ? (
-          <>{selectedValue.signature}</>
-        ) : (
-          "Select Approval Signature"
-        )}{" "}
+        {selectedValue?.approval ? <>{selectedValue.approval}</> : "1"}{" "}
         <span
           className="dropDownIcon"
           onClick={() => setOpenDropDown(!openDropDown)}
@@ -63,7 +64,7 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
         <DropDownAssetsItem display={openDropDown ? "block" : "none"}>
           {ProgramArray.map((elem, ind) => (
             <li key={ind} onClick={(e) => handelChange(e, elem)}>
-              {elem.signature}{" "}
+              {elem.approval}{" "}
             </li>
           ))}
         </DropDownAssetsItem>
@@ -72,4 +73,4 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
   );
 };
 
-export default ApprovalDropDown;
+export default TotalApprovalDropDown;
