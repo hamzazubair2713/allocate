@@ -65,7 +65,7 @@ export const DropDownListWrapper = styled.ul`
   display: flex;
   align-items: center;
   gap: 4px;
-
+  text-overflow: ellipsis;
   .dropDownIcon {
     position: absolute;
     right: 15px;
@@ -125,7 +125,6 @@ export const PaymentDropDownItem = styled.div`
   background: var(--white);
   top: 49px;
   transition: 0.3s all ease;
-  z-index: 4;
 
   li {
     background: var(--white);

@@ -49,9 +49,6 @@ function SideNavUser() {
           >
             <Link href="/user/nft-redemption">NFT Collections</Link>
           </li>
-          <li className={activeLink === "/emissary-settings" ? "active" : ""}>
-            <Link href="/emissary-settings">Emissary Settings</Link>
-          </li>
         </ul>
       </Nav>
       <UserController>
@@ -60,7 +57,7 @@ function SideNavUser() {
         </div>
         <span className="name">8Eo3...KAFL</span>
         <button type="button" className="btn">
-          Contoller
+          User
         </button>
       </UserController>
     </MainSideBar>

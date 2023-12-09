@@ -27,7 +27,7 @@ const CreatEmissary = () => {
               <FaRegUserCircle size="26" />
               <span className="text">5D25...oePo</span>
             </div>
-            {steps == 1 && (
+            {steps == 3 && (
               <div className="input-content">
                 <strong className="title">
                   What asset(s) your emissary utilizing?
@@ -43,13 +43,18 @@ const CreatEmissary = () => {
                   </button>
                 </div>
                 <div className="btn-holder">
-                  <Button variant="primary" className="back" type="button">
+                  <Button
+                    variant="primary"
+                    className="back"
+                    type="button"
+                    onClick={() => setSteps(2)}
+                  >
                     <FiArrowLeftCircle size="24" />
                   </Button>
                   <Button
                     type="button"
                     variant="primary"
-                    onClick={() => setSteps(2)}
+                    onClick={() => setSteps(4)}
                   >
                     Proceed
                   </Button>
@@ -57,7 +62,7 @@ const CreatEmissary = () => {
               </div>
             )}
 
-            {steps == 2 && (
+            {steps == 1 && (
               <div className="input-content">
                 <CombineInput label="Provide a URL slug for your emissary..." />
                 <div className="btn-holder">
@@ -72,7 +77,7 @@ const CreatEmissary = () => {
                   <Button
                     type="button"
                     variant="primary"
-                    onClick={() => setSteps(3)}
+                    onClick={() => setSteps(2)}
                   >
                     Proceed
                   </Button>
@@ -80,7 +85,7 @@ const CreatEmissary = () => {
               </div>
             )}
 
-            {steps == 3 && (
+            {steps == 2 && (
               <div className="input-content">
                 <strong className="title">
                   Upload a logo for your emissary...
@@ -100,15 +105,14 @@ const CreatEmissary = () => {
                     type="button"
                     variant="primary"
                     className="back"
-                    onClick={() => setSteps(2)}
+                    onClick={() => setSteps(1)}
                   >
                     <FiArrowLeftCircle size="24" />
                   </Button>
                   <Button
                     variant="primary"
                     onClick={(e) => {
-                      e.preventDefault();
-                      setSteps(4);
+                      setSteps(3);
                     }}
                   >
                     Proceed

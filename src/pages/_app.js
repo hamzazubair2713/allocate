@@ -55,7 +55,14 @@ const Styling = css`
       padding: 90px 50px 0 300px;
     }
   }
-
+  .Toastify__toast,
+  .Toastify__toast-theme--light,
+  .Toastify__toast--success,
+  .Toastify__toast--close-on-click {
+    border-radius: 5px;
+    border-left: 8px solid #0eac27;
+    background: #e7ffea;
+  }
   .container {
     max-width: 1230px;
     margin: 0 auto;

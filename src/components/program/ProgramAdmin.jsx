@@ -78,7 +78,7 @@ export const ProgramStyled = styled.form`
         max-width: 112px;
         width: 100%;
         margin-top: 17px;
-        z-index: 2;
+        /* z-index: 2; */
         ul {
           padding: 14px 18px;
           border-top-left-radius: 0px;
@@ -178,7 +178,9 @@ import NftCreated from "./NftCreatedComp";
 import AutoSubmittedComp from "./AutoSubmittedComp";
 const ProgramCreation = () => {
   const [uploadedNft, setUploadedNft] = useState("");
-  const [toggleform, setToggleform] = useState(0);
+  const [toggleform, setToggleform] = useState(false);
+  const [toggleform1, setToggleform1] = useState(false);
+  const [toggleform2, setToggleform2] = useState(false);
 
   //using 3rd CheckBox
 
@@ -218,7 +220,9 @@ const ProgramCreation = () => {
             For="program"
             label="Set as token-gated (NFT) program"
             onChange={(e) =>
-              e.target.checked == true ? setToggleform(1) : setToggleform(0)
+              e.target.checked == true
+                ? setToggleform(true)
+                : setToggleform(false)
             }
           />
 
@@ -228,7 +232,7 @@ const ProgramCreation = () => {
               program. You can perfectly <br /> restrict clients who are not
               related to this program to create a transfer request.
             </p>
-            {toggleform == 1 && (
+            {toggleform && (
               <div className="borderform">
                 <CombineInput label="NFT contract address" />
               </div>
@@ -243,7 +247,9 @@ const ProgramCreation = () => {
             For="redemption"
             label="Setup NFT redemption"
             onChange={(e) =>
-              e.target.checked == true ? setToggleform(2) : setToggleform(0)
+              e.target.checked == true
+                ? setToggleform1(true)
+                : setToggleform1(false)
             }
           />
           <div className="formWrapper">
@@ -253,7 +259,7 @@ const ProgramCreation = () => {
               and successfully get paid, they can go to the NFT redemption tab
               to claim their NFT. Perfect for event related programs!
             </p>
-            {toggleform == 2 && (
+            {toggleform1 && (
               <div className="borderform">
                 <CombineInput label="Title" className="input" />
                 <span>This is the name of your NFT collection</span>
@@ -318,7 +324,8 @@ const ProgramCreation = () => {
             For="Submission"
             label="Setup NFT Auto Request Submission"
             onChange={(e) =>
-              e.target.checked == true ? setToggleform(3) : setToggleform(0)
+             setToggleform2(e.target.checked) 
+               
             }
           />
           <div className="formWrapper">
@@ -330,7 +337,7 @@ const ProgramCreation = () => {
               automatically fill in for him/her. Perfect to a program where the
               amount of transfer request is the same!
             </p>
-            {toggleform == 3 && (
+            {toggleform2 && (
               <div className="borderform">
                 <CombineInput label="NFT Contract Address" />
                 <div className="amountDrop">

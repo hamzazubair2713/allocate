@@ -26,10 +26,9 @@ export const Tab = styled.div`
   cursor: pointer;
   color: var(--gray-50);
   color: ${(props) => (props.isActive ? "#000" : "none")};
-  //border-bottom: ${(props) => (props.isActive ? "2px solid #007bff" : "none")};
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);

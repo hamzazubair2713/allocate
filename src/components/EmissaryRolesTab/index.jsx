@@ -5,14 +5,22 @@ import { FiPlusCircle } from "react-icons/fi";
 import { GeneralTabHolder } from "./EmissaryRolesTab.styles";
 import AssetsDropDown from "../InputFields/AssetsDropDown";
 import RoleDropDown from "../InputFields/RoleDropDown";
+import { ToastContainer, toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 function EmissaryRolesTab() {
   const [assetsValue, setAssetsValue] = useState("Select an asset");
   const [assetsValue1, setAssetsValue1] = useState("Select an asset");
   const [assetsValue2, setAssetsValue2] = useState("Select an asset");
-
+  const notify = () =>
+    toast.success("Changes saved successfully!", {
+      hideProgressBar: true,
+      icon: false,
+    });
   return (
     <GeneralTabHolder>
+      <ToastContainer />
+
       <form>
         <div className="content-holder">
           <div className="box">
@@ -108,7 +116,9 @@ function EmissaryRolesTab() {
           </div>
         </div>
         <div className="btn-holder">
-          <Button variant="primary">Save Changes</Button>
+          <Button variant="primary" type="button" onClick={notify}>
+            Save Changes
+          </Button>
         </div>
       </form>
     </GeneralTabHolder>

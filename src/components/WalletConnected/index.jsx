@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import walletImg from "../../../public/wallet-logo.svg";
+import walletImg from "../../../public/walletIcon.png";
 import Button from "../Button/Button";
 import { WalletColumn } from "./WalletConnected.styles";
 import Link from "next/link";
@@ -12,10 +12,8 @@ const WalletConnected = () => {
         <div className="icon-box">
           <Image src={walletImg} alt="img description" />
         </div>
-        <strong className="title">Klaytn Wallet</strong>
-        <p>
-          <Link href="/">Don’t have an Klaytn wallet? Download here</Link>
-        </p>
+        <strong className="title">Keplr Wallet</strong>
+ 
         <div className="btn-holder">
           <Link href="/user/transfer-request">
             <Button variant="primary" width="200">

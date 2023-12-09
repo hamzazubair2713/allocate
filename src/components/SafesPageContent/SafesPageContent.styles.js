@@ -62,10 +62,10 @@ export const ContentSection = styled.div`
     margin: 0 0 30px;
 
     @media (min-width: 768px) {
-      display: flex;
+      /* display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      flex-flow: row-reverse;
+      flex-flow: row-reverse; */
     }
 
     .wrap {

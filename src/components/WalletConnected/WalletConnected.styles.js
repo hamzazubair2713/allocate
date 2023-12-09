@@ -44,7 +44,7 @@ export const WalletColumn = styled.div`
   }
 
   .btn-holder {
-    padding-top: 5px;
+    padding-top: 40px;
 
     button {
       width: 200px;

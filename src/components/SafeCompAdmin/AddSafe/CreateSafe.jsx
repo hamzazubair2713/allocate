@@ -9,16 +9,17 @@ import CombineInput from "@/components/InputFields/CombineInput";
 import AssetsDropDown from "@/components/InputFields/AssetsDropDown";
 import ApprovalDropDown from "@/components/InputFields/ApprovalDropDown";
 import CheckBox from "@/components/CheckBox";
-import PaymentDropDown from "@/components/InputFields/PaymentDropDown";
 import Button from "@/components/Button/Button";
 import TotalApprovalDropDown from "@/components/InputFields/TotalApprovalDropDown";
+import PaymentDropDown from "@/components/InputFields/PaymentDropDown";
 
 const CreateSafe = () => {
   const [assetsValue, setAssetsValue] = useState("Select an asset");
   const [signatureValue, setSignatureValue] = useState(
     "Select Approval Signature"
   );
-  const [checkBoxVal, setCheckBoxVal] = useState(0);
+  const [checkBoxVal, setCheckBoxVal] = useState(false);
+  const [checkBoxValOne, setCheckBoxValOne] = useState(false);
   const [confirm, setConfirm] = useState(1);
   console.log(confirm);
   return (
@@ -91,9 +92,9 @@ const CreateSafe = () => {
             id="release"
             For="release"
             label="Lump sum release to the recipient"
-            onChange={(e) => setCheckBoxVal(e.target.checked == true ? 1 : 0)}
+            onChange={(e) => setCheckBoxVal(e.target.checked)}
           />
-          {checkBoxVal == 1 && (
+          {checkBoxVal && (
             <div className="broderInputWrapper">
               <div className="amountDrop">
                 <CombineInput label="Release amount" />
@@ -110,9 +111,9 @@ const CreateSafe = () => {
             id="Milestones"
             For="Milestones"
             label="Milestones-based release to the recipient"
-            onChange={(e) => setCheckBoxVal(e.target.checked == true ? 2 : 0)}
+            onChange={(e) => setCheckBoxValOne(e.target.checked)}
           />
-          {checkBoxVal == 2 && (
+          {checkBoxValOne && (
             <div className="broderInputWrapper">
               <div className="amountDrop">
                 <CombineInput label="Release amount" />

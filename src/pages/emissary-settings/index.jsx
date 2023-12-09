@@ -10,23 +10,31 @@ import EmissaryRolesTab from "@/components/EmissaryRolesTab";
 
 function EmissarySettings() {
   const tabs = [
-    { label: "General Info & Whitelabel", 
-      content: 
+    {
+      label: "General Info & Whitelabel",
+      content: (
         <>
           <GeneralInfoTab />
         </>
-      },
-      
-    { label: "NFT Access", content: 
-    <>
-      <NFTaccessTab />
-    </>
-  },
-    { label: "Emissary Roles", content: 
-    <>
-      <EmissaryRolesTab />
-    </>
-  },
+      ),
+    },
+
+    {
+      label: "NFT Access",
+      content: (
+        <>
+          <NFTaccessTab />
+        </>
+      ),
+    },
+    {
+      label: "Emissary Roles",
+      content: (
+        <>
+          <EmissaryRolesTab />
+        </>
+      ),
+    },
   ];
   return (
     <>

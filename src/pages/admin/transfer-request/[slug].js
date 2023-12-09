@@ -6,9 +6,8 @@ import TransferRequestAdmin from "@/components/TransferRequestAdmin";
 import ProcessingTransfer from "@/components/ProcessingTransfer";
 import TransferPayoutCompleted from "@/components/TransferPayoutCompleted";
 import { useRouter } from "next/router";
-import AdminTransferRequests from "@/components/AdminTransferRequests/BatchTransferUser";
 
-const Index = ({ param }) => {
+const TransferDetail = ({ param }) => {
   // const router = useRouter();
   // console.log(router.query);
   const [handelForm, setHandelForm] = useState(1);
@@ -19,9 +18,18 @@ const Index = ({ param }) => {
         <FiArrowLeftCircle />
         Transfer Requests
       </PageHeader>
-      <AdminTransferRequests />
+      {handelForm == 1 && (
+        <TransferRequestAdmin setHandelForm={setHandelForm} />
+      )}
+      {/* Proccessing Componets  */}
+      {handelForm == 2 && <ProcessingTransfer />}
+
+      {/* TransferPayoutCompleted Componets  */}
+      {handelForm == 3 && (
+        <TransferPayoutCompleted setHandelForm={setHandelForm} />
+      )}
     </>
   );
 };
 
-export default Index;
+export default TransferDetail;

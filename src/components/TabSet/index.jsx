@@ -1,6 +1,6 @@
 // src/components/TabSet.js
 import React, { useState } from "react";
-import { TabSetContainer, TabList, Tab, TabPanel } from './TabSet.styles'
+import { TabSetContainer, TabList, Tab, TabPanel } from "./TabSet.styles";
 
 const TabSet = ({ tabs }) => {
   const [activeTab, setActiveTab] = useState(0);

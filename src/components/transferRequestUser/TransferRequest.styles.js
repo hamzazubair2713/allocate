@@ -56,7 +56,7 @@ export const Wrapper = styled.div`
       max-width: 112px;
       width: 100%;
       margin-top: 17px;
-      z-index: 2;
+      /* z-index: 2; */
 
       ul {
         padding: 14px 18px;

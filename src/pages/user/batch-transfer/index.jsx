@@ -10,7 +10,8 @@ const index = () => {
     <>
       <SideNavUser />
       <PageHeader>
-        Batch Transfer <Image src={add} alt="Add" />
+        Batch Transfer
+        {/* <Image src={add} alt="Add" /> */}
       </PageHeader>
       <BatchTransferUser />
     </>

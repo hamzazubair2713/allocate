@@ -18,7 +18,6 @@ function SafesPageContent({ heighLight }) {
         </div>
         <div className="holder">
           <div className="text-box">
-            <Button variant="outline">Deposit</Button>
             <div className="wrap">
               <strong className="title">About this safe</strong>
               <p>
