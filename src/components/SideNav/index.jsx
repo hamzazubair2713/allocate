@@ -29,7 +29,9 @@ function SideNav() {
         <ul className="main-nav">
           <li
             onClick={handleClick}
-            className={activeLink === "/admin/transfer-request" ? "active" : ""}
+            className={
+              activeLink.includes("/admin/transfer-request") ? "active" : ""
+            }
           >
             <Link
               href="/admin/transfer-request"
