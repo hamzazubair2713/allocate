@@ -41,7 +41,7 @@ function EmissarySettings() {
       <SideNav />
       <PageHeader>
         <Image src={back} alt="back" />
-        Safes
+        Emissary Settings
       </PageHeader>
       <TabSet tabs={tabs} />
     </>

@@ -4,8 +4,7 @@ import { LuSearch } from "react-icons/lu";
 import AddSafe from "./AddSafe/AddSafe";
 import CreateSafe from "./AddSafe/CreateSafe";
 
-const SafeCompAdmin = () => {
-  const [addSafe, setAddSafe] = useState(true);
+const SafeCompAdmin = ({ addSafe, setAddSafe }) => {
   return (
     <AdminSafeWrapper>
       {addSafe && (

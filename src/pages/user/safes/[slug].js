@@ -5,9 +5,8 @@ import SideNav from "@/components/SideNav";
 import PageHeader from "@/components/PageHeader";
 import SafesPageContent from "@/components/SafesPageContent";
 import SideNavUser from "@/components/SideNavUser";
-import UserSafeRequests from "@/components/UserSafe/UserSafeRequests";
 
-function Safes() {
+function UserSafeDetail() {
   return (
     <>
       <SideNavUser />
@@ -15,9 +14,9 @@ function Safes() {
         <Image src={back} alt="back" />
         Safes
       </PageHeader>
-      <UserSafeRequests />
+      <SafesPageContent />
     </>
   );
 }
 
-export default Safes;
+export default UserSafeDetail;

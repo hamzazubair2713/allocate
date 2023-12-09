@@ -13,7 +13,7 @@ import DigestingInfo from "../DigestingInfo";
 const CreatEmissary = () => {
   const [value, setValue] = useState("");
 
-  const [steps, setSteps] = useState(1);
+  const [steps, setSteps] = useState(0);
 
   return (
     <>
@@ -27,41 +27,29 @@ const CreatEmissary = () => {
               <FaRegUserCircle size="26" />
               <span className="text">5D25...oePo</span>
             </div>
-            {steps == 3 && (
+
+            {steps == 0 && (
               <div className="input-content">
-                <strong className="title">
-                  What asset(s) your emissary utilizing?
-                </strong>
-                <div className="inner-wrap">
-                  <AssetsDropDown
-                    selectedValue={value}
-                    setSelectedValue={setValue}
-                    onChange={() => console.log(value)}
-                  />
-                  <button className="btn-add" type="button">
-                    <FiPlusCircle size="30" />
-                  </button>
-                </div>
+                <CombineInput label="Provide a name for your emissary..." />
                 <div className="btn-holder">
                   <Button
+                    type="button"
                     variant="primary"
                     className="back"
-                    type="button"
-                    onClick={() => setSteps(2)}
+                    onClick={() => setSteps(0)}
                   >
                     <FiArrowLeftCircle size="24" />
                   </Button>
                   <Button
                     type="button"
                     variant="primary"
-                    onClick={() => setSteps(4)}
+                    onClick={() => setSteps(1)}
                   >
                     Proceed
                   </Button>
                 </div>
               </div>
             )}
-
             {steps == 1 && (
               <div className="input-content">
                 <CombineInput label="Provide a URL slug for your emissary..." />
@@ -70,7 +58,7 @@ const CreatEmissary = () => {
                     type="button"
                     variant="primary"
                     className="back"
-                    onClick={() => setSteps(1)}
+                    onClick={() => setSteps(0)}
                   >
                     <FiArrowLeftCircle size="24" />
                   </Button>
@@ -114,6 +102,40 @@ const CreatEmissary = () => {
                     onClick={(e) => {
                       setSteps(3);
                     }}
+                  >
+                    Proceed
+                  </Button>
+                </div>
+              </div>
+            )}
+            {steps == 3 && (
+              <div className="input-content">
+                <strong className="title">
+                  What asset(s) your emissary utilizing?
+                </strong>
+                <div className="inner-wrap">
+                  <AssetsDropDown
+                    selectedValue={value}
+                    setSelectedValue={setValue}
+                    onChange={() => console.log(value)}
+                  />
+                  <button className="btn-add" type="button">
+                    <FiPlusCircle size="30" />
+                  </button>
+                </div>
+                <div className="btn-holder">
+                  <Button
+                    variant="primary"
+                    className="back"
+                    type="button"
+                    onClick={() => setSteps(2)}
+                  >
+                    <FiArrowLeftCircle size="24" />
+                  </Button>
+                  <Button
+                    type="button"
+                    variant="primary"
+                    onClick={() => setSteps(4)}
                   >
                     Proceed
                   </Button>
