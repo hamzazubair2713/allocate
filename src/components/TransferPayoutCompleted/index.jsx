@@ -24,6 +24,7 @@ const TransferPayoutCompleted = ({ setHandelForm }) => {
         </p>
         <div className="info-text">
           0x0f7ac266c8e003a3ef71ca56222bbff48d5e97c166ad4d5ef54e05288d86fa0a
+          hamza
         </div>
         <div className="btn-holder">
           <Link href={`${router}/?data=Paid`} onClick={() => setHandelForm(1)}>
