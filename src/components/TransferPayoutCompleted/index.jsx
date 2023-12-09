@@ -5,8 +5,12 @@ import Button from "../Button/Button";
 import { MdOutlineArrowCircleRight } from "react-icons/md";
 import { ProcessBlock } from "./TransferPayoutCompleted.styles";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const TransferPayoutCompleted = ({ setHandelForm }) => {
+  const router = usePathname();
+  console.log(router);
   return (
     <ProcessBlock>
       <div className="holder">
@@ -22,10 +26,7 @@ const TransferPayoutCompleted = ({ setHandelForm }) => {
           0x0f7ac266c8e003a3ef71ca56222bbff48d5e97c166ad4d5ef54e05288d86fa0a
         </div>
         <div className="btn-holder">
-          <Link
-            href="/admin/transfer-request?data=Paid"
-            onClick={() => setHandelForm(1)}
-          >
+          <Link href={`${router}/?data=Paid`} onClick={() => setHandelForm(1)}>
             <Button variant="primary">
               Redirect <MdOutlineArrowCircleRight size="24" /> Transfer Request
             </Button>
