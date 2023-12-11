@@ -18,11 +18,43 @@ function GeneralInfoTab() {
   function handelDataProgram(params) {
     // setvalue(params);
   }
+  const [inputText, setInputText] = useState("2568pj");
+
   const notify = () =>
     toast.success("Changes saved successfully!", {
       hideProgressBar: true,
       icon: false,
     });
+  const handleCopyText = () => {
+    // Create a temporary textarea element to copy the text
+    const tempTextArea = document.createElement("textarea");
+    tempTextArea.value = inputText;
+
+    // Make the textarea invisible
+    tempTextArea.style.position = "absolute";
+    tempTextArea.style.left = "-9999px";
+
+    // Append the textarea to the document
+    document.body.appendChild(tempTextArea);
+
+    // Select the text inside the textarea
+    tempTextArea.select();
+    tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the selected text to the clipboard
+    document.execCommand("copy");
+
+    // Remove the temporary textarea
+    document.body.removeChild(tempTextArea);
+
+    // You can provide user feedback, e.g., using a toast notification
+    const notify = () =>
+      toast.success(`Emissary Unique Code ${inputText} is copied`, {
+        hideProgressBar: true,
+        icon: false,
+      });
+    notify();
+  };
 
   return (
     <>
@@ -42,10 +74,19 @@ function GeneralInfoTab() {
                 URL).
               </p>
               <div className="code-input">
-                <button className="btn-copy" type="button">
+                <button
+                  className="btn-copy"
+                  type="button"
+                  onClick={handleCopyText}
+                >
                   <LuFiles size="20" />
                 </button>
-                <input type="text" placeholder="32sj34" />
+                <input
+                  type="text"
+                  placeholder="32sj34"
+                  disabled
+                  value={inputText}
+                />
               </div>
             </div>
             <div className="box">

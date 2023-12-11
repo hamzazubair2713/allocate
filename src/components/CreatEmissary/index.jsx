@@ -9,9 +9,12 @@ import CombineInput from "../InputFields/CombineInput";
 import Button from "../Button/Button";
 import AssetsDropDown from "../InputFields/AssetsDropDown";
 import DigestingInfo from "../DigestingInfo";
+import plusIcon from "../../../public/plusIcon.png";
+import Image from "next/image";
 
 const CreatEmissary = () => {
   const [value, setValue] = useState("");
+  const [uploadedNft, setUploadedNft] = useState("");
 
   const [steps, setSteps] = useState(0);
 
@@ -84,9 +87,22 @@ const CreatEmissary = () => {
                 </p>
                 <div className="upload-file">
                   <label htmlFor="upload" className="labelButton">
-                    <FiPlusCircle />
+                    {!uploadedNft && <Image src={plusIcon} alt="icon" />}
+                    {uploadedNft && (
+                      <Image
+                        src={URL.createObjectURL(uploadedNft)}
+                        alt="img"
+                        width={uploadedNft && 280}
+                        height={uploadedNft && 280}
+                      />
+                    )}
                   </label>
-                  <input type="file" id="upload" accept=".pnd , .jpg" />
+                  <input
+                    type="file"
+                    id="upload"
+                    accept=".pnd , .jpg"
+                    onChange={(e) => setUploadedNft(e.target.files[0])}
+                  />
                 </div>
                 <div className="btn-holder">
                   <Button

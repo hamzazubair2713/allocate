@@ -4,7 +4,8 @@ export const GeneralTabHolder = styled.div`
   position: relative;
   color: var(--gray-50);
 
-  @media (min-width: 992px) {}
+  @media (min-width: 992px) {
+  }
 
   .content-holder {
     max-width: 650px;
@@ -51,9 +52,10 @@ export const GeneralTabHolder = styled.div`
       box-shadow: none;
       border: 2px solid var(--gray-300);
       background: var(--gray-250);
+      color: var(--blue);
 
       &::placeholder {
-        color: var(--blue)
+        color: var(--blue);
       }
     }
   }
@@ -88,7 +90,7 @@ export const GeneralTabHolder = styled.div`
       width: 340px;
       min-height: 176px;
       border-radius: 10px;
-      border: 1px solid #C8C8C8;
+      border: 1px solid #c8c8c8;
       cursor: pointer;
 
       @media (min-width: 768px) {
@@ -103,7 +105,6 @@ export const GeneralTabHolder = styled.div`
 
   .btn-holder {
     padding-top: 30px;
-    border-top: 1px solid var(--gray-300)
+    border-top: 1px solid var(--gray-300);
   }
 `;
-

@@ -59,11 +59,13 @@ const CreateSafe = () => {
             approvers from your list of emissary controllers and they will need
             to use their wallet to approve any transactions to the recipient.
           </p>
-          <ApprovalDropDown
-            onChange={(value) => console.log(value)}
-            selectedValue={signatureValue}
-            setSelectedValue={setSignatureValue}
-          />
+          {Array.from({ length: confirm.approval || 1 }, (_, index) => (
+            <ApprovalDropDown
+              onChange={(value) => console.log(value)}
+              selectedValue={signatureValue}
+              setSelectedValue={setSignatureValue}
+            />
+          ))}
         </ApprovalDropdown>
         <ConfirmationStyle>
           <div className="approval">
