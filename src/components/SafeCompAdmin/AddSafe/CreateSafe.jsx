@@ -61,6 +61,7 @@ const CreateSafe = () => {
           </p>
           {Array.from({ length: confirm.approval || 1 }, (_, index) => (
             <ApprovalDropDown
+              key={index}
               onChange={(value) => console.log(value)}
               selectedValue={signatureValue}
               setSelectedValue={setSignatureValue}
