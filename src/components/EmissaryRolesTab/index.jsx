@@ -50,7 +50,7 @@ function EmissaryRolesTab() {
           <div className="box">
             <div className="roles-holder">
               {value.map((elem, ind) => (
-                <div className="flex">
+                <div className="flex" key={ind}>
                   <div className="col-wrap">
                     <div className="text">{elem}</div>
                     <div className="dropdown-wrap">
