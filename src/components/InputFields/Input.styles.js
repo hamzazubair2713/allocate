@@ -72,6 +72,74 @@ export const DropDownListWrapper = styled.ul`
     cursor: pointer;
   }
 `;
+export const DropDownListWrapperSelect = styled.ul`
+  position: relative;
+  border: 1px solid var(--gray-300);
+  border-radius: 5px;
+  padding: 15px 18px;
+  color: var(--gray-50);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  background: var(--gray-250);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-overflow: ellipsis;
+
+  /* Targtes on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 2px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    border-radius: 30px;
+    background: #eceaf9;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.03);
+    border-radius: 30px;
+  }
+
+  .dropDownIcon {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+  }
+  .selectWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 90%;
+    overflow-x: auto;
+  }
+  .itemWrapper {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 110px;
+    height: 35px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 2px solid #e1e1e1;
+    background: rgba(217, 217, 217, 0);
+    padding: 10px 20px 10px 10px;
+    position: relative;
+    z-index: 10;
+    p {
+      margin: 0;
+    }
+    .cross {
+      position: absolute;
+      right: 6px;
+      cursor: pointer;
+    }
+  }
+`;
 
 export const DropDownItem = styled.div`
   position: absolute;

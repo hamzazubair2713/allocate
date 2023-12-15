@@ -175,27 +175,6 @@ const Styling = css`
   /************* custom scrollbar styles ************/
 
   /* This will work on Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: var(--primary) #eceaf9;
-  }
-
-  /* Targtes on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  *::-webkit-scrollbar-track {
-    border-radius: 30px;
-    background: #eceaf9;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.03);
-    border-radius: 30px;
-  }
 
   /* Remove Arrows/Spinners from input type number */
 

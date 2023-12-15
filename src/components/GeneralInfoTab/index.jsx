@@ -10,9 +10,10 @@ import AssetsDropDown from "../InputFields/AssetsDropDown";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import AssetsDropDownSelect from "../InputFields/AssetsDropDownSelect";
 
 function GeneralInfoTab() {
-  const [assetsValue, setAssetsValue] = useState("Select an asset");
+  const [assetsValue, setAssetsValue] = useState([]);
   const [uploadedNft, setUploadedNft] = useState("");
 
   function handelDataProgram(params) {
@@ -95,7 +96,7 @@ function GeneralInfoTab() {
                 Add asset(s) that will be using in this emissary for transfer
                 requests and safes payout.
               </p>
-              <AssetsDropDown
+              <AssetsDropDownSelect
                 onChange={(value) => console.log(value)}
                 selectedValue={assetsValue}
                 setSelectedValue={setAssetsValue}
