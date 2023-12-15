@@ -11,9 +11,10 @@ import AssetsDropDown from "../InputFields/AssetsDropDown";
 import DigestingInfo from "../DigestingInfo";
 import plusIcon from "../../../public/plusIcon.png";
 import Image from "next/image";
+import AssetsDropDownSelect from "../InputFields/AssetsDropDownSelect";
 
 const CreatEmissary = () => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState([]);
   const [uploadedNft, setUploadedNft] = useState("");
 
   const [steps, setSteps] = useState(0);
@@ -130,7 +131,7 @@ const CreatEmissary = () => {
                   What asset(s) your emissary utilizing?
                 </strong>
                 <div className="inner-wrap">
-                  <AssetsDropDown
+                  <AssetsDropDownSelect
                     selectedValue={value}
                     setSelectedValue={setValue}
                     onChange={() => console.log(value)}
