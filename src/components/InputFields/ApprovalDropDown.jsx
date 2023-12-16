@@ -6,8 +6,10 @@ import {
   ProgramDrop,
 } from "./Input.styles";
 
-const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
+const ApprovalDropDown = ({ onChange }) => {
   const [openDropDown, setOpenDropDown] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("Choose a controller");
+
   // const [selectedValue, setSelectedValue] = useState(
   //   "  Select name of the program"
   // );
@@ -29,9 +31,9 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
       signature: "0x9C728A1C7ECeAa681d3330D74D8c2593A6C16b452326",
     },
   ];
-  function handelChange(e, selectedValue) {
+  function handelChange(e, elem) {
     e.stopPropagation();
-    setSelectedValue(selectedValue);
+    setSelectedValue(elem);
     setOpenDropDown(false);
   }
   useEffect(() => {
@@ -44,7 +46,7 @@ const ApprovalDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
         {selectedValue?.signature ? (
           <>{selectedValue.signature}</>
         ) : (
-          "Select Approval Signature"
+          "Choose a controller"
         )}{" "}
         <span
           className="dropDownIcon"

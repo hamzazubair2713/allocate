@@ -12,15 +12,25 @@ import CheckBox from "@/components/CheckBox";
 import Button from "@/components/Button/Button";
 import TotalApprovalDropDown from "@/components/InputFields/TotalApprovalDropDown";
 import PaymentDropDown from "@/components/InputFields/PaymentDropDown";
-
+import { FiPlusCircle } from "react-icons/fi";
+import { RiDeleteBin6Line } from "react-icons/ri";
+const NumberOfApprove = ["1"];
 const CreateSafe = () => {
   const [assetsValue, setAssetsValue] = useState("Select an asset");
-  const [signatureValue, setSignatureValue] = useState(
-    "Select Approval Signature"
-  );
+  const [signatureValue, setSignatureValue] = useState("Choose a controller");
   const [checkBoxVal, setCheckBoxVal] = useState(false);
   const [checkBoxValOne, setCheckBoxValOne] = useState(false);
   const [confirm, setConfirm] = useState(1);
+  const [value, setValue] = useState(NumberOfApprove);
+  const [add, setAdd] = useState("");
+
+  function handelAdd(elem) {
+    setAdd(elem);
+    setValue((prev) => [...prev, add]);
+  }
+  function handelRemove(id) {
+    setValue((prev) => prev.filter((elem, ind) => ind !== id));
+  }
   console.log(confirm);
   return (
     <AddSafeStyles>
@@ -59,13 +69,20 @@ const CreateSafe = () => {
             approvers from your list of emissary controllers and they will need
             to use their wallet to approve any transactions to the recipient.
           </p>
-          {Array.from({ length: confirm.approval || 1 }, (_, index) => (
-            <ApprovalDropDown
-              key={index}
-              onChange={(value) => console.log(value)}
-              selectedValue={signatureValue}
-              setSelectedValue={setSignatureValue}
-            />
+          {value.map((elem, ind) => (
+            <div className="wrapperApprovalDrop">
+              <ApprovalDropDown
+                key={ind}
+                onChange={(value) => console.log(value)}
+                selectedValue={signatureValue}
+                setSelectedValue={setSignatureValue}
+              />
+              {ind == 0 ? (
+                <FiPlusCircle size={30} onClick={() => handelAdd(elem)} />
+              ) : (
+                <RiDeleteBin6Line size={30} onClick={() => handelRemove(ind)} />
+              )}
+            </div>
           ))}
         </ApprovalDropdown>
         <ConfirmationStyle>
@@ -80,10 +97,7 @@ const CreateSafe = () => {
               selectedValue={confirm}
             />
             <span>
-              out of{" "}
-              <span className="strong">
-                {confirm?.approval ? confirm.approval : 1}
-              </span>{" "}
+              out of <span className="strong">{value ? value.length : 1}</span>{" "}
               approver(s)
             </span>
           </div>

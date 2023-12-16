@@ -12,8 +12,10 @@ import USDT from "../../../public/USDT.png";
 import XET from "../../../public/XET.png";
 import Image from "next/image";
 
-const RoleDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
+const RoleDropDown = ({ onChange }) => {
   const [openDropDown, setOpenDropDown] = useState(false);
+  const [selectedValue, setSelectedValue] = useState("Select an asset");
+
   // const [selectedValue, setSelectedValue] = useState(
   //   "  Select name of the program"
   // );
@@ -39,9 +41,9 @@ const RoleDropDown = ({ onChange, selectedValue, setSelectedValue }) => {
       role: "Admin",
     },
   ];
-  function handelChange(e, selectedValue) {
+  function handelChange(e, elem) {
     e.stopPropagation();
-    setSelectedValue(selectedValue);
+    setSelectedValue(elem);
     setOpenDropDown(false);
   }
   useEffect(() => {

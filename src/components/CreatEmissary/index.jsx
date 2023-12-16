@@ -136,9 +136,9 @@ const CreatEmissary = () => {
                     setSelectedValue={setValue}
                     onChange={() => console.log(value)}
                   />
-                  <button className="btn-add" type="button">
+                  {/* <button className="btn-add" type="button">
                     <FiPlusCircle size="30" />
-                  </button>
+                  </button> */}
                 </div>
                 <div className="btn-holder">
                   <Button

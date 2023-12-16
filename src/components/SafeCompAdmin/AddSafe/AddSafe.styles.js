@@ -128,7 +128,14 @@ export const ApprovalDropdown = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 150%;
-
+  width: 100%;
+  .wrapperApprovalDrop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
   .approvalheading {
     color: var(--solid-gray);
     font-size: 14px;

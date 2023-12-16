@@ -13,6 +13,8 @@ import USDT from "../../../public/USDT.png";
 import XET from "../../../public/XET.png";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
+import { FiPlusCircle } from "react-icons/fi";
+
 const AssetsDropDownSelect = ({
   onChange,
   selectedValue,
@@ -65,7 +67,7 @@ const AssetsDropDownSelect = ({
   return (
     <ProgramDrop>
       {/* <label htmlFor="">Program</label> */}
-      <DropDownListWrapperSelect onClick={() => setOpenDropDown(!openDropDown)}>
+      <DropDownListWrapperSelect>
         {selectedValue.length ? (
           <div className="selectWrapper">
             {selectedValue.map((elem, ind) => (
@@ -86,18 +88,10 @@ const AssetsDropDownSelect = ({
           "Select an asset"
         )}{" "}
         <span
-          className="dropDownIcon"
+          className="dropDownAddIcon"
           onClick={() => setOpenDropDown(!openDropDown)}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="10"
-            viewBox="0 0 14 10"
-            fill="none"
-          >
-            <path d="M7 10L13.9282 0.25H0.0717969L7 10Z" fill="#E1E1E1" />
-          </svg>
+          <FiPlusCircle size="30" />
         </span>
         <DropDownAssetsItem display={openDropDown ? "block" : "none"}>
           {ProgramArray.map((elem, ind) => (

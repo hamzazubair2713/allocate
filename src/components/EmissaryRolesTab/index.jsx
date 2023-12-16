@@ -54,11 +54,7 @@ function EmissaryRolesTab() {
                   <div className="col-wrap">
                     <div className="text">{elem}</div>
                     <div className="dropdown-wrap">
-                      <RoleDropDown
-                        onChange={(value) => console.log(value)}
-                        selectedValue={assetsValue}
-                        setSelectedValue={setAssetsValue}
-                      />
+                      <RoleDropDown onChange={(value) => console.log(value)} />
                     </div>
                   </div>
                   <ul className="action-btn">

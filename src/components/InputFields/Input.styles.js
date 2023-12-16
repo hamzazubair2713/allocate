@@ -39,6 +39,7 @@ export const ProgramDrop = styled.div`
   flex-direction: column;
   gap: 14px; */
   position: relative;
+  width: 100%;
 
   label {
     display: block;
@@ -108,6 +109,11 @@ export const DropDownListWrapperSelect = styled.ul`
   .dropDownIcon {
     position: absolute;
     right: 15px;
+    cursor: pointer;
+  }
+  .dropDownAddIcon {
+    position: absolute;
+    right: -40px;
     cursor: pointer;
   }
   .selectWrapper {
