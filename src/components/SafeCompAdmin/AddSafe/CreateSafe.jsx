@@ -70,7 +70,7 @@ const CreateSafe = () => {
             to use their wallet to approve any transactions to the recipient.
           </p>
           {value.map((elem, ind) => (
-            <div className="wrapperApprovalDrop">
+            <div className="wrapperApprovalDrop" key={ind}>
               <ApprovalDropDown
                 key={ind}
                 onChange={(value) => console.log(value)}
