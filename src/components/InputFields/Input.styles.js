@@ -199,7 +199,7 @@ export const PaymentDropDownItem = styled.div`
   background: var(--white);
   top: 49px;
   transition: 0.3s all ease;
-
+  z-index: 10;
   li {
     background: var(--white);
     width: 100%;

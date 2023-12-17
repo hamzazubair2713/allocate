@@ -15,6 +15,7 @@ import PaymentDropDown from "@/components/InputFields/PaymentDropDown";
 import { FiPlusCircle } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 const NumberOfApprove = ["1"];
+const NumberOfMilstone = ["1", "@"];
 const CreateSafe = () => {
   const [assetsValue, setAssetsValue] = useState("Select an asset");
   const [signatureValue, setSignatureValue] = useState("Choose a controller");
@@ -22,6 +23,7 @@ const CreateSafe = () => {
   const [checkBoxValOne, setCheckBoxValOne] = useState(false);
   const [confirm, setConfirm] = useState(1);
   const [value, setValue] = useState(NumberOfApprove);
+  const [mileStone, setMileStone] = useState(NumberOfMilstone);
   const [add, setAdd] = useState("");
 
   function handelAdd(elem) {
@@ -30,6 +32,12 @@ const CreateSafe = () => {
   }
   function handelRemove(id) {
     setValue((prev) => prev.filter((elem, ind) => ind !== id));
+  }
+  function handelAddMileStone(elem) {
+    setMileStone((prev) => [...prev, elem]);
+  }
+  function handelRemoveMileStone(id) {
+    setMileStone((prev) => prev.filter((elem, ind) => ind !== id));
   }
   console.log(confirm);
   return (
@@ -132,14 +140,34 @@ const CreateSafe = () => {
           />
           {checkBoxValOne && (
             <div className="broderInputWrapper">
-              <div className="amountDrop">
-                <CombineInput label="Release amount" />
-                <PaymentDropDown
-                  label=""
-                  onChange={(param) => console.log(param)}
-                  className="amount"
-                />
-              </div>
+              Milestones
+              {mileStone.map((elem, ind) => (
+                <div className="amountDropMilstone" key={ind}>
+                  <CombineInput label="" placeholder={`Milestone${ind + 1}`} />
+                  <PaymentDropDown
+                    label=""
+                    onChange={(param) => console.log(param)}
+                    className="amount"
+                  />
+                  {ind == 0 ? (
+                    <div className="icon">
+                      <FiPlusCircle
+                        size={30}
+                        color="var(--blue)"
+                        onClick={() => handelAddMileStone(elem)}
+                      />
+                    </div>
+                  ) : (
+                    <div className="icon">
+                      <RiDeleteBin6Line
+                        color="var(--blue)"
+                        size={30}
+                        onClick={() => handelRemoveMileStone(ind)}
+                      />
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           )}
         </TransferMode>

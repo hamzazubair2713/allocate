@@ -169,7 +169,6 @@ export const TransferMode = styled.div`
         max-width: 112px;
         width: 100%;
         margin-top: 17px;
-        /* z-index: 2; */
 
         ul {
           padding: 14px 18px;
@@ -177,6 +176,55 @@ export const TransferMode = styled.div`
           border-bottom-left-radius: 0px;
           color: var(--blue);
         }
+      }
+      .amountMilstone {
+        max-width: 112px;
+        width: 100%;
+
+        ul {
+          padding: 14px 18px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          color: var(--blue);
+        }
+      }
+    }
+    .amountDropMilstone {
+      display: flex;
+      position: relative;
+      padding-right: 25px;
+
+      input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .amount {
+        max-width: 112px;
+        width: 100%;
+
+        ul {
+          padding: 14px 18px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          color: var(--blue);
+        }
+      }
+      .amountMilstone {
+        max-width: 112px;
+        width: 100%;
+
+        ul {
+          padding: 14px 18px;
+          border-top-left-radius: 0px;
+          border-bottom-left-radius: 0px;
+          color: var(--blue);
+        }
+      }
+      .icon {
+        position: absolute;
+        top: 20px;
+        right: -10px;
       }
     }
   }
