@@ -15,7 +15,7 @@ import PaymentDropDown from "@/components/InputFields/PaymentDropDown";
 import { FiPlusCircle } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 const NumberOfApprove = ["1"];
-const NumberOfMilstone = ["1", "@"];
+const NumberOfMilstone = ["1"];
 const CreateSafe = () => {
   const [assetsValue, setAssetsValue] = useState("Select an asset");
   const [signatureValue, setSignatureValue] = useState("Choose a controller");
