@@ -223,8 +223,8 @@ export const TransferMode = styled.div`
       }
       .icon {
         position: absolute;
-        top: 20px;
-        right: -10px;
+        top: 23px;
+        right: -3px;
       }
     }
   }

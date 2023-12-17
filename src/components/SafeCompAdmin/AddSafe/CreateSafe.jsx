@@ -86,9 +86,9 @@ const CreateSafe = () => {
                 setSelectedValue={setSignatureValue}
               />
               {ind == 0 ? (
-                <FiPlusCircle size={30} onClick={() => handelAdd(elem)} />
+                <FiPlusCircle size={24} onClick={() => handelAdd(elem)} />
               ) : (
-                <RiDeleteBin6Line size={30} onClick={() => handelRemove(ind)} />
+                <RiDeleteBin6Line size={24} onClick={() => handelRemove(ind)} />
               )}
             </div>
           ))}
@@ -152,7 +152,7 @@ const CreateSafe = () => {
                   {ind == 0 ? (
                     <div className="icon">
                       <FiPlusCircle
-                        size={30}
+                        size={24}
                         color="var(--blue)"
                         onClick={() => handelAddMileStone(elem)}
                       />
@@ -161,7 +161,7 @@ const CreateSafe = () => {
                     <div className="icon">
                       <RiDeleteBin6Line
                         color="var(--blue)"
-                        size={30}
+                        size={24}
                         onClick={() => handelRemoveMileStone(ind)}
                       />
                     </div>
